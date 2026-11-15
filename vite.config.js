@@ -1,10 +1,7 @@
+
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-/*
- * Emits robots.txt and sitemap.xml at build time from VITE_SITE_URL (.env),
- * so the domain only has to be set in one place.
- */
 function seoFiles(siteUrl) {
   const alternates = [
     `    <xhtml:link rel="alternate" hreflang="hi" href="${siteUrl}/"/>`,
@@ -17,7 +14,8 @@ function seoFiles(siteUrl) {
     apply: 'build',
     generateBundle() {
       const today = new Date().toISOString().slice(0, 10);
-      const url = (loc) => `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n  </url>`;
+      const url = (loc) =>
+        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n  </url>`;
 
       this.emitFile({
         type: 'asset',
@@ -40,9 +38,12 @@ function seoFiles(siteUrl) {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_');
-  const siteUrl = (env.VITE_SITE_URL || 'https://bharatiyagyansamvad.in').replace(/\/+$/, '');
+  const siteUrl = (
+    env.VITE_SITE_URL || 'https://bharatiyagyansamvad.in'
+  ).replace(/\/+$/, '');
 
   return {
+    base: '/bharatiya-gyan-samvad/',
     plugins: [react(), seoFiles(siteUrl)],
   };
 });
