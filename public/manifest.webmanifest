@@ -1,0 +1,16 @@
+{
+  "name": "भारतीय ज्ञान संवाद — Bharatiya Gyan Samvad",
+  "short_name": "ज्ञान संवाद",
+  "description": "जहाँ शास्त्र मिलते हैं जीवन से। Indian knowledge & spirituality media.",
+  "lang": "hi",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#17251f",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
