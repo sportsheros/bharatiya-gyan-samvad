@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sportsheros.github.io/bharatiya-gyan-samvad/sitemap.xml
