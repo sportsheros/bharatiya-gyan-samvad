@@ -39,7 +39,7 @@ function seoFiles(siteUrl) {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_');
   const siteUrl = (
-    env.VITE_SITE_URL || 'https://bharatiyagyansamvad.in'
+    env.VITE_SITE_URL || 'https://sportsheros.github.io/bharatiya-gyan-samvad'
   ).replace(/\/+$/, '');
 
   return {
